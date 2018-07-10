@@ -26,37 +26,31 @@ namespace calculato
         {
             double firstnumber = Convert.ToDouble(textBox1.Text);
             double secondnumber = Convert.ToDouble(textBox2.Text);
-           double  result = firstnumber + secondnumber;
+            double result;
+            switch (((Button)sender).Name)
+            {
+                case "plus":
+                    result = firstnumber + secondnumber;
+                    break;
+                case "minus":
+                    result = firstnumber - secondnumber;
+                    break;
+                case "multiply":
+                    result = firstnumber * secondnumber;
+                    break;
+                case "devision":
+                    result = firstnumber / secondnumber;
+                    break;
+                default:
+                    throw new Exception("Error");
+
+            }
             conclusion.Text = result.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            double firstnumber = Convert.ToDouble(textBox1.Text);
-            double secondnumber = Convert.ToDouble(textBox2.Text);
-            double result = firstnumber - secondnumber;
-            conclusion.Text = result.ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            double firstnumber = Convert.ToDouble(textBox1.Text);
-            double secondnumber = Convert.ToDouble(textBox2.Text);
-            double result = firstnumber * secondnumber;
-            conclusion.Text = result.ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            double firstnumber = Convert.ToDouble(textBox1.Text);
-            double secondnumber = Convert.ToDouble(textBox2.Text);
-            double result = firstnumber / secondnumber;
-            conclusion.Text = result.ToString();
         }
     }
     }
